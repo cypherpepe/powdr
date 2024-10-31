@@ -191,7 +191,8 @@ impl<'a, 'b, T: FieldElement> WitnessGenerator<'a, 'b, T> {
         );
         let identities = self
             .analyzed
-            .identities_with_inlined_intermediate_polynomials()
+            .identities
+            .clone()
             .into_iter()
             .filter(|identity| {
                 let discard = identity.expr_any(|expr| {
