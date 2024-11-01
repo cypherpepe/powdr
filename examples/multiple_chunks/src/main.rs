@@ -16,6 +16,5 @@ fn main() {
     // Fast dry run to test execution.
     session.run();
 
-    // Uncomment to compute the proof.
     session.prove();
 }
