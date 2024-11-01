@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Quick Start - powdr</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">powdrVM</li><li class="chapter-item expanded "><a href="powdr_vm_intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with powdrVM</li><li class="chapter-item expanded "><a href="installation_vm.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="quick_start_vm.html" class="active"><strong aria-hidden="true">3.</strong> Quick Start</a></li><li class="chapter-item expanded affix "><li class="part-title">powdr SDK</li><li class="chapter-item expanded "><a href="powdr_sdk_intro.html"><strong aria-hidden="true">4.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with powdr SDK</li><li class="chapter-item expanded "><a href="installation_sdk.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li class="chapter-item expanded "><a href="hello_world.html"><strong aria-hidden="true">6.</strong> Hello World</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hello_world_cli.html"><strong aria-hidden="true">6.1.</strong> in the CLI</a></li><li class="chapter-item expanded "><a href="powdr_crate.html"><strong aria-hidden="true">6.2.</strong> as a library</a></li><li class="chapter-item expanded "><a href="hello_world_ethereum.html"><strong aria-hidden="true">6.3.</strong> verified on Ethereum</a></li><li class="chapter-item expanded "><a href="hello_world_ethereum_aggregation.html"><strong aria-hidden="true">6.4.</strong> verified on Ethereum with proof aggregation</a></li></ol></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">7.</strong> Examples</a></li><li class="chapter-item expanded "><a href="publics.html"><strong aria-hidden="true">8.</strong> Using publics</a></li><li class="chapter-item expanded affix "><li class="part-title">powdr SDK Reference Guide</li><li class="chapter-item expanded "><a href="cli/index.html"><strong aria-hidden="true">9.</strong> CLI</a></li><li class="chapter-item expanded "><a href="asm/index.html"><strong aria-hidden="true">10.</strong> asm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="asm/modules.html"><strong aria-hidden="true">10.1.</strong> Modules</a></li><li class="chapter-item expanded "><a href="asm/declarations.html"><strong aria-hidden="true">10.2.</strong> Declarations</a></li><li class="chapter-item expanded "><a href="asm/machines.html"><strong aria-hidden="true">10.3.</strong> Machines</a></li><li class="chapter-item expanded "><a href="asm/registers.html"><strong aria-hidden="true">10.4.</strong> Registers</a></li><li class="chapter-item expanded "><a href="asm/functions.html"><strong aria-hidden="true">10.5.</strong> Functions</a></li><li class="chapter-item expanded "><a href="asm/expressions.html"><strong aria-hidden="true">10.6.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="asm/instructions.html"><strong aria-hidden="true">10.7.</strong> Instructions</a></li><li class="chapter-item expanded "><a href="asm/operations.html"><strong aria-hidden="true">10.8.</strong> Operations</a></li><li class="chapter-item expanded "><a href="asm/links.html"><strong aria-hidden="true">10.9.</strong> Links</a></li></ol></li><li class="chapter-item expanded "><a href="pil/index.html"><strong aria-hidden="true">11.</strong> pil</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="pil/declarations.html"><strong aria-hidden="true">11.1.</strong> Declarations</a></li><li class="chapter-item expanded "><a href="pil/expressions.html"><strong aria-hidden="true">11.2.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="pil/patterns.html"><strong aria-hidden="true">11.3.</strong> Patterns</a></li><li class="chapter-item expanded "><a href="pil/types.html"><strong aria-hidden="true">11.4.</strong> Types</a></li><li class="chapter-item expanded "><a href="pil/fixed_columns.html"><strong aria-hidden="true">11.5.</strong> Fixed Columns</a></li><li class="chapter-item expanded "><a href="pil/builtins.html"><strong aria-hidden="true">11.6.</strong> Built-in Functions</a></li></ol></li><li class="chapter-item expanded "><a href="frontends/index.html"><strong aria-hidden="true">12.</strong> Frontends</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="frontends/riscv.html"><strong aria-hidden="true">12.1.</strong> RISCV</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="frontends/zk-continuations.html"><strong aria-hidden="true">12.1.1.</strong> zk-Continuations</a></li></ol></li><li class="chapter-item expanded "><a href="frontends/valida.html"><strong aria-hidden="true">12.2.</strong> Valida</a></li><li class="chapter-item expanded "><a href="frontends/evm.html"><strong aria-hidden="true">12.3.</strong> EVM</a></li></ol></li><li class="chapter-item expanded "><a href="backends/index.html"><strong aria-hidden="true">13.</strong> Backends</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="backends/plonky3.html"><strong aria-hidden="true">13.1.</strong> plonky3</a></li><li class="chapter-item expanded "><a href="backends/halo2.html"><strong aria-hidden="true">13.2.</strong> Halo2</a></li><li class="chapter-item expanded "><a href="backends/estark.html"><strong aria-hidden="true">13.3.</strong> eSTARK</a></li></ol></li><li class="chapter-item expanded "><a href="architecture/index.html"><strong aria-hidden="true">14.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/compiler.html"><strong aria-hidden="true">14.1.</strong> Compiler</a></li><li class="chapter-item expanded "><a href="architecture/linker.html"><strong aria-hidden="true">14.2.</strong> Linker</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">powdr</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h1>
+<p>First, create a new powdrVM project with</p>
+<pre><code class="language-console">cargo-powdr new my-host
+</code></pre>
+<ul>
+<li>Your new crate <code>my-host</code> is the host of the virtual machine's execution,
+and is responsible for preparing data and running the prover.</li>
+<li>The <code>guest</code> crate in your new project contains the Rust code whose execution will be proven.</li>
+</ul>
+<p>Most of these details are abstracted by the <code>powdr</code> library.</p>
+<p>Now that your project is set up, just run</p>
+<pre><code class="language-console">cargo run -r
+</code></pre>
+<p>The host manages a <code>powdr::Session</code> which can be used to share data
+with the guest, test the execution, and generate ZK proofs.</p>
+<pre><code class="language-rust">use powdr::Session;
+
+fn main() {
+    env_logger::init();
+
+    let some_data = vec![1, 2, 3, 4, 5];
+
+    // Create a new powdr session to make proofs for the `guest` crate.
+    // Store all temporary and final artifacts in `powdr-target`.
+    let mut session = Session::builder()
+        .guest_path("./guest")
+        .out_path("powdr-target")
+        // powdrVM splits long execution traces into chunks
+        // which are proven individually.
+        // The default size of a chunk is 2^20 = 1048576 rows.
+        // For experiments and smaller traces/proofs, it may be beneficial to reduce the chunk size.
+        // Create a new powdr session with a custom chunk size.
+        // 2^18 = 262144 rows per chunk.
+        .chunk_size_log2(18)
+        .build()
+        // Write `some_data` to channel 1 and the sum of `some_data` to channel 2.
+        // Any serde-serializable type can be written to a channel.
+        .write(1, &amp;some_data)
+        .write(2, &amp;some_data.iter().sum::&lt;u32&gt;());
+
+    // Fast dry run to test execution.
+    session.run();
+
+    // Uncomment to compute the proof.
+    //session.prove();
+}</code></pre>
+<p>The guest contains the custom logic that should be proved.</p>
+<pre><code class="language-rust">use powdr_riscv_runtime;
+use powdr_riscv_runtime::io::read;
+
+fn main() {
+    // Any serde-deserializable type can be read from a channel.
+    // Read some data from channel 1.
+    let data: Vec&lt;u32&gt; = read(1);
+    // Read the claimed sum from channel 2.
+    let sum: u32 = read(2);
+
+    // Check that the claimed sum is correct.
+    assert_eq!(data.iter().sum::&lt;u32&gt;(), sum);
+}</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="installation_vm.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="powdr_sdk_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="installation_vm.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="powdr_sdk_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
